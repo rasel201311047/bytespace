@@ -1,6 +1,7 @@
 import CourseSidebar from "@/src/components/course/CourseSidebar";
 import CourseTabs from "@/src/components/course/CourseTabs";
 import VideoPlayer from "@/src/components/course/VideoPlayer";
+import Footer from "@/src/components/Footer";
 import PageHero from "@/src/components/PageHero";
 import { baseCourses } from "@/src/lib/data";
 import { BarChart3, Share2, Star, Users } from "lucide-react";
@@ -104,6 +105,7 @@ export default async function Page({ params }: Props) {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }
