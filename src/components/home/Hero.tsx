@@ -2,6 +2,8 @@ import { pos } from "@/src/lib/pos";
 import Floating from "../Floating";
 import Navber from "../Navber";
 import { Search } from "lucide-react";
+import Image from "next/image";
+import { HappyStudents, LearningProgress } from "../StatCards";
 const W = 1440,
   H = 1024;
 const p = (x: number, y: number, w?: number) => pos(W, H, x, y, w);
@@ -64,6 +66,7 @@ export default function Hero() {
           />
         </div>
 
+        {/* search animation item */}
         <div className="relative z-10 px-5 pb-6 pt-[110px] sm:pt-[130px] text-center lg:absolute lg:inset-x-0 lg:top-0 lg:p-0 lg:pt-[12.2%]">
           <h1 className="mx-auto max-w-[853px] animate-rise text-[34px] sm:text-[48px] md:text-[56px] lg:text-[clamp(44px,4.9vw,70px)] font-semibold leading-[1.16] text-white">
             Get Access to Hundreds Courses Available
@@ -95,6 +98,54 @@ export default function Hero() {
               Search
             </button>
           </form>
+        </div>
+        {/* banar image  + element*/}
+        <div className="relative mx-auto mt-4 h-[320px] sm:h-[420px] md:h-[470px] w-full max-w-[640px] overflow-hidden lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0 lg:h-[48.8%] lg:max-w-none">
+          <div
+            className="absolute rounded-full bg-lime aspect-square transition-all"
+            style={{
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "min(520px, 86%)",
+              top: "14%",
+            }}
+          />
+
+          <div
+            className="absolute z-10 animate-pop transition-all"
+            style={{
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "min(460px, 78%)",
+              bottom: "0",
+            }}
+          >
+            <Image
+              src="/images/hero-man.png"
+              alt="Smiling student with headphones holding a laptop"
+              width={570}
+              height={494}
+              priority
+              className="h-auto w-full select-none"
+            />
+          </div>
+
+          <LearningProgress
+            className="animate-floaty-slow [animation-delay:1s] absolute z-20"
+            style={{
+              right: "4%",
+              top: "24%",
+              fontSize: "clamp(8px, 1.7vw, 13px)",
+            }}
+          />
+          <HappyStudents
+            className="animate-floaty-slow [animation-delay:2s] absolute z-20"
+            style={{
+              left: "6%",
+              bottom: "8%",
+              fontSize: "clamp(8px, 1.6vw, 12.5px)",
+            }}
+          />
         </div>
       </div>
     </section>
