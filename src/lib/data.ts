@@ -135,3 +135,21 @@ export const testimonials = [
     text: '"As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It\'s fulfilling to see my courses making a positive impact on learners globally."',
   },
 ];
+export const footerCols = [
+  ["Featured Courses", "Featured Categories", "Business", "IT", "Design"],
+  ["Development", "Marketing", "Photography", "Finance", "Sport"],
+  ["Become a Creator", "Affiliate Program", "Contact", "Help", "About"],
+];
+
+// datof  cource
+export const searchCategories = [
+  "Featured",
+  "Music",
+  "Drawing & Painting",
+  "Marketing",
+  "Animation",
+  "Social Media",
+  "UI/UX Design",
+  "Creative Marketing",
+  "Cooking",
+];
