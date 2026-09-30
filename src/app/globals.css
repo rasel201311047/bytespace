@@ -5,10 +5,85 @@
 @import "@fontsource/outfit/300.css";
 @import "@fontsource/outfit/400.css";
 @import "@fontsource/outfit/500.css";
+
 @theme {
+  --color-brand: #003be2;
+  --color-brand-dark: #0033c4;
+  --color-lime: #ccff00;
+  --color-lime-soft: #d8ff1f;
+  --color-ink: #1c1c1e;
+
+  --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  --container-page: 1200px;
+
+  --animate-floaty: floaty 6s ease-in-out infinite;
+  --animate-floaty-slow: floaty-slow 5s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 40s linear infinite;
+  --animate-marquee: marquee 28s linear infinite;
   --animate-rise: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   --animate-pop: pop 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-fill: fill 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s both;
+
+  @keyframes floaty {
+    0%,
+    100% {
+      transform: translateY(0) rotate(var(--r, 0deg));
+    }
+    50% {
+      transform: translateY(-14px) rotate(var(--r, 0deg));
+    }
+  }
+  @keyframes floaty-slow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  @keyframes spin-slow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes fill {
+    from {
+      width: 0%;
+    }
+    to {
+      width: var(--w);
+    }
+  }
 }
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -40,6 +115,39 @@
   background-position: 0 -1px;
 }
 
+@utility btn-lime {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: var(--color-lime);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  transition-property: transform, background-color, box-shadow;
+  transition-duration: 300ms;
+}
+.btn-lime:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-lime-soft);
+  box-shadow: 0 10px 24px -8px rgba(204, 255, 0, 0.7);
+}
+.btn-lime:active {
+  transform: translateY(0);
+}
+
+@utility chip-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  color: var(--color-ink);
+}
+
 @utility wrap {
   margin-inline: auto;
   width: 100%;
@@ -54,5 +162,33 @@
 @media (min-width: 1280px) {
   .wrap {
     padding-inline: 0;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .animate-fill {
+    width: var(--w);
   }
 }
