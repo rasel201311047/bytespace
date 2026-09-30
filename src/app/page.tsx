@@ -1,4 +1,5 @@
 import CreateSection from "../components/CreateSection";
+import CreatorCTA from "../components/home/CreatorCTA";
 import Discover from "../components/home/Discover";
 import Hero from "../components/home/Hero";
 import LearningPaths from "../components/home/LearningPaths";
@@ -14,6 +15,7 @@ export default function Home() {
       <LearningPaths />
       <PathSection />
       <CreateSection />
+      <CreatorCTA />
     </main>
   );
 }
