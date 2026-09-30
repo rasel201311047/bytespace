@@ -8,7 +8,7 @@ const p = (x: number, y: number, w?: number) => pos(W, H, x, y, w);
 export default function CreatorCTA() {
   return (
     <section className="bg-grid relative overflow-hidden">
-      <div className="relative mx-auto max-w-[1440px]">
+      <div className="relative mx-auto max-w-full">
         <div className="hidden lg:block pointer-events-none">
           <Floating
             src="/images/cta-spring-lime-tl.png"
