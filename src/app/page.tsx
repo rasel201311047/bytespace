@@ -1,5 +1,6 @@
 import Discover from "../components/home/Discover";
 import Hero from "../components/home/Hero";
+import LearningPaths from "../components/home/LearningPaths";
 import Partners from "../components/home/Partners";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Partners />
       <Discover />
+      <LearningPaths />
     </main>
   );
 }

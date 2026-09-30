@@ -105,3 +105,12 @@ export const catalogue: Course[] = Array.from({ length: 90 }, (_, i) => {
   return { ...c, id: `${c.id}-${i}` };
 });
 export const featuredCourses = baseCourses;
+
+export const learningPaths = [
+  "Design",
+  "Development",
+  "IT & Software",
+  "Business",
+  "Marketing",
+  "Photography",
+] as const;
