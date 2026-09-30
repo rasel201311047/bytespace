@@ -83,45 +83,45 @@ export default function Navber() {
         </div>
 
         {/* dwair */}
-        {open && (
-          <div className="wrap md:hidden pb-4">
-            <div className="animate-pop rounded-3xl bg-white/98 p-6 shadow-2xl backdrop-blur-xl border border-white/20">
-              <nav className="flex flex-col gap-1.5" aria-label="Mobile">
-                {links.map((l) => (
-                  <Link
-                    key={l.href}
-                    href={l.href}
-                    onClick={() => setOpen(false)}
-                    className={`rounded-2xl px-4 py-3 text-lg transition duration-200 ${
-                      isActive(l.href)
-                        ? "bg-lime font-medium text-ink shadow-[0_4px_12px_-2px_rgba(204,255,0,0.6)]"
-                        : "text-ink hover:bg-[#F3F3F3]"
-                    }`}
-                  >
-                    {l.label}
-                  </Link>
-                ))}
-                <div className="mt-4 flex gap-3">
-                  <Link
-                    href="/login"
-                    onClick={() => setOpen(false)}
-                    className="btn-lime flex-1 !bg-[#F3F3F3] text-ink"
-                  >
-                    Sign In
-                  </Link>
-                  <Link
-                    href="/register"
-                    onClick={() => setOpen(false)}
-                    className="btn-lime flex-1"
-                  >
-                    Join Us
-                  </Link>
-                </div>
-              </nav>
-            </div>
-          </div>
-        )}
       </div>
+      {open && (
+        <div className="wrap md:hidden pb-4">
+          <div className="animate-pop rounded-3xl bg-white/98 p-6 shadow-2xl backdrop-blur-xl border border-white/20">
+            <nav className="flex flex-col gap-1.5" aria-label="Mobile">
+              {links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className={`rounded-2xl px-4 py-3 text-lg transition duration-200 ${
+                    isActive(l.href)
+                      ? "bg-lime font-medium text-ink shadow-[0_4px_12px_-2px_rgba(204,255,0,0.6)]"
+                      : "text-ink hover:bg-[#F3F3F3]"
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              ))}
+              <div className="mt-4 flex gap-3">
+                <Link
+                  href="/login"
+                  onClick={() => setOpen(false)}
+                  className="btn-lime flex-1 !bg-[#F3F3F3] text-ink"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/register"
+                  onClick={() => setOpen(false)}
+                  className="btn-lime flex-1"
+                >
+                  Join Us
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
