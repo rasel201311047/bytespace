@@ -32,7 +32,7 @@ export default async function Page({ params }: Props) {
         <h2 className="text-[24px] sm:text-[30px] lg:text-[34px] font-semibold text-ink">
           Courses by PurePearl Studio
         </h2>
-        <div className="mt-8 sm:mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[42px]">
+        <div className="mt-12 sm:mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-[42px] lg:gap-y-8">
           {baseCourses.slice(0, 3).map((c, i) => (
             <Reveal key={c.id} delay={i * 90}>
               <CourseCard course={c} />
