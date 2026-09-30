@@ -1,3 +1,4 @@
+import CreateSection from "../components/CreateSection";
 import Discover from "../components/home/Discover";
 import Hero from "../components/home/Hero";
 import LearningPaths from "../components/home/LearningPaths";
@@ -12,6 +13,7 @@ export default function Home() {
       <Discover />
       <LearningPaths />
       <PathSection />
+      <CreateSection />
     </main>
   );
 }
