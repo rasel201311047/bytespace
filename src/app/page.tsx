@@ -1,4 +1,5 @@
 import CreateSection from "../components/CreateSection";
+import Footer from "../components/Footer";
 import CreatorCTA from "../components/home/CreatorCTA";
 import Discover from "../components/home/Discover";
 import Hero from "../components/home/Hero";
@@ -18,6 +19,7 @@ export default function Home() {
       <CreateSection />
       <CreatorCTA />
       <Testimonials />
+      <Footer />
     </main>
   );
 }
