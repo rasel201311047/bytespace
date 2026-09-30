@@ -14,7 +14,7 @@ export default function Hero() {
       <Navber />
 
       <div
-        className="relative mx-auto max-w-[1440px] lg:aspect-[1440/1024]"
+        className="relative mx-auto w-full lg:h-[min(56.25vw,1024px)] lg:min-h-[760px]"
         style={{ fontSize: "clamp(8px,1vw,14.4px)" }}
       >
         {/* the element of the herroside  */}
